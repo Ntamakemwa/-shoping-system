@@ -28,12 +28,11 @@ public class Product {
         this.stock = stock;
     }
     public void checkAndReduceStock(int amount) throws StockError {
-        // Unchecked Exception (Runtime) - Bonus: Meaningful validation
+
         if (amount <= 0) {
             throw new IllegalArgumentException("Quantity must be a positive number.");
         }
 
-        // Custom Exception (Checked)
         if (this.stock < amount) {
             throw new StockError("Not enough " + item + " in inventory.");
         }
