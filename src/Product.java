@@ -10,21 +10,27 @@ public class Product {
     }
 
     public String getItem() {
+
         return item;
     }
     public double getPrice() {
+
         return price;
     }
     public void setItem(String item) {
+
         this.item = item;
     }
     public void setPrice(double price) {
+
         this.price = price;
     }
     public int getStock() {
+
         return stock;
     }
     public void setStock(int stock) {
+
         this.stock = stock;
     }
     public void checkAndReduceStock(int amount) throws StockError {
