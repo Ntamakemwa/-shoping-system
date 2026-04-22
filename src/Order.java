@@ -9,13 +9,13 @@ public class Order {
             System.out.println("Item: " + quantity + "x " + product.getItem());
             System.out.println("Total Paid: $" + (product.getPrice() * quantity));
             System.out.println("Status: CONFIRMED");
+
         }
 
-
-        catch (StockError e) {
-            System.out.println("Status: TRANSACTION FAILED");
-            System.out.println("Reason: " + e.getMessage());
-        }
+            catch (StockError e) {
+                System.out.println("Status: TRANSACTION FAILED");
+                System.out.println("Reason: " + e.getMessage());
+            }
 
 
         catch (IllegalArgumentException e) {
