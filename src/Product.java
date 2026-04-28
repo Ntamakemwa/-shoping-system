@@ -9,41 +9,13 @@ public class Product {
         this.stock = stock;
     }
 
-    public String getItem() {
+    public String getItem() { return item; }
+    public double getPrice() { return price; }
+    public int getStock() { return stock; }
 
-        return item;
-    }
-    public double getPrice() {
-
-        return price;
-    }
-    public void setItem(String item) {
-
-        this.item = item;
-    }
-    public void setPrice(double price) {
-
-        this.price = price;
-    }
-    public int getStock() {
-
-        return stock;
-    }
-    public void setStock(int stock) {
-
-        this.stock = stock;
-    }
-    public void checkAndReduceStock(int amount) throws StockError {
-
-        if (amount <= 0) {
-            throw new IllegalArgumentException("Quantity must be a positive number.");
-        }
-
-        if (this.stock < amount) {
-            throw new StockError("Not enough " + item + " in inventory.");
-        }
-
+    public void checkAndReduceStock(int amount) throws StockException {
+        if (amount <= 0) throw new IllegalArgumentException("Quantity must be positive!");
+        if (this.stock < amount) throw new StockException("Insufficient stock for " + item);
         this.stock -= amount;
     }
 }
-
